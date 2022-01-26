@@ -34,3 +34,19 @@ Examples of image output of my Canny GPU version.
 **N.B:** obviously, the results may vary according to the value chosen for the thresholds in the hysteresis step.
 ## Kernel config
 I tried several kernel configurations but the one that gave the best results was the one where I used a thread block size of 16x16.
+
+| Kernel Configuration |  
+:-------------------------:|
+![](https://github.com/Dantekk/Canny-GPU-CUDA-implementation/blob/main/images/test/kernel_config_high.jpg)
+## Kernel time esecution
+This is the pie chart showing the execution times of the various kernel device function and data transfer memcpy routines on 720p image resolution.
+| Kernel time esec |  
+:-------------------------:|
+![](https://github.com/Dantekk/Canny-GPU-CUDA-implementation/blob/main/images/test/kernel_call_720_high.jpg)
+## CPU v.s. GPU
+This is the comparison analysis between the OpenCV CPU version and my parallel version on GPU.
+| CPU v.s. GPU |  
+:-------------------------:|
+![](https://github.com/Dantekk/Canny-GPU-CUDA-implementation/blob/main/images/test/cpu_vs_gpu_high2.jpg)
+
+As you can see from the graph, with a low resolution image the results of the two versions are similar. As the image resolution increases, the parallel version gets significantly better results.
